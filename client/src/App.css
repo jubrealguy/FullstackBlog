@@ -1,0 +1,107 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.App {
+  padding: 2rem 10rem 0 10rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7rem;
+}
+
+.header__text {
+  font-size: 4rem;
+  text-decoration: none;
+  color: black;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.nav__link:first-child {
+  margin-right: 3rem;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.post__img-box {
+  flex: 0 0 45%;
+  margin-right: 5rem;
+}
+
+.post__img {
+  width: 100%;
+}
+
+.post__head {
+  font-size: 2.2rem;
+  margin-bottom: .6rem;
+}
+
+.post__info {
+  margin-bottom: 1.2rem;
+  color: grey;
+  font-weight: bold;
+}
+
+.post__info a {
+  text-decoration: none;
+  color: grey;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.post__body {
+  font-size: 1.6rem;
+}
+
+.form {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 2.2rem;
+  font-size: 2.75rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-control {
+  padding: 1rem;
+  width: 100%; 
+  font-size: 1.6rem;
+  border: 2px solid #ddd;
+  border-radius: 1rem;
+}
+
+.form button {
+  padding: 1rem ;
+  width: 100%;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: .8rem;
+  color: #fff;
+  background-color: #444;
+}
