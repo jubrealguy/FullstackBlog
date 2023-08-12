@@ -1,6 +1,7 @@
 import { useContext, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import { UserContext } from '../userContext'
+import img from '../img/logo.png'
 
 const Header = () => {
     const {setUserInfo, userInfo} = useContext(UserContext)
@@ -12,7 +13,7 @@ const Header = () => {
                 setUserInfo(userInfo)
             })
         })
-    }, [])
+    }, [setUserInfo])
 
     const logout = () => {
         fetch('http://localhost:5000/logout', {
@@ -26,12 +27,17 @@ const Header = () => {
     return (
         <div>
             <header className="header">
-                <h1><Link to='/' className="header__text">Adebayo's Blog</Link></h1>
+                <h1><Link to='/'><img src={img} alt='logo' className='logo' />AdebayoBlog</Link></h1>
+                {username && (
+                    <>
+                        <p className="loggedName">Hi {username}!!!</p>
+                    </>
+                )}
                 <nav className="nav">
                     {username && (
                         <>
-                            <Link to="create" className="nav__link">Create new post</Link>
-                            <Link to='/login' className="nav__link" onClick={logout}>Logout</Link>
+                            <Link to="create" className="nav__link1">Create new post</Link>
+                            <Link to='/login' className="nav__link1" onClick={logout}>Logout</Link>
                         </>
                     )}
                     {!username && (
@@ -42,7 +48,11 @@ const Header = () => {
                     )}
                    </nav>
             </header>
-        </div>
+            <div className='header__text'>
+                <h2 className="welcome-head">Welcome to Adebayo's Blog</h2>
+                <p className="caption">News, Events, Entertainment, Lifestyle, Fashion, Beauty, Inspiration and yes...</p>
+            </div>
+           </div>
     )
 }
 
